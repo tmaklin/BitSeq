@@ -17,6 +17,8 @@
 #include "TranscriptInfo.h"
 #include "transposeFiles.h"
 
+#include "bxzstr/include/bxzstr.hpp"
+
 #include "common.h"
 
 #define DEBUG(x)
@@ -43,7 +45,7 @@ TagAlignments* readData(const ArgumentParser &args) {//{{{
    double prb;
    long Ntotal=0,Nmap=0,probM=0;
    string readId,strand,blank;
-   ifstream inFile;
+   bxz::ifstream inFile;
    MyTimer timer;
    TagAlignments *alignments = new TagAlignments(false);
 

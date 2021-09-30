@@ -9,6 +9,8 @@ using namespace std;
 #include "FileHeader.h"
 #include "misc.h"
 
+#include "bxzstr/include/bxzstr.hpp"
+
 #include "common.h"
    
 #define Sof(x) (long)x.size()
@@ -190,7 +192,7 @@ bool Conditions::init(string trFileName, vector<string> filesGot, long *c, long 
    }
    *n=N;
 
-   ifstream trFile(trFileName.c_str());
+   bxz::ifstream trFile(trFileName.c_str());
    if(! trFile.is_open()){
    // if there is no transcript join file, the we have to make sure that Ms are the same
       if(sameMs){

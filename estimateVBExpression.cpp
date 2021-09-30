@@ -7,6 +7,8 @@
 #include "transposeFiles.h"
 #include "VariationalBayes.h"
 
+#include "bxzstr/include/bxzstr.hpp"
+
 #include "common.h"
 
 SimpleSparse* readData(const ArgumentParser &args, long trM){//{{{
@@ -20,7 +22,7 @@ SimpleSparse* readData(const ArgumentParser &args, long trM){//{{{
    double prb;
    long Ntotal=0,Nmap=0, M=0;
    string readId,strand,blank;
-   ifstream inFile;
+   bxz::ifstream inFile;
    MyTimer timer;
    TagAlignments *alignments = new TagAlignments();
 
@@ -216,7 +218,7 @@ string programDescription =
 
       // Get read headers. Already performed in readData but function returns SimpleSparse
       long Ntotal=0,Nmap=0, M=0;
-      ifstream inF;
+      bxz::ifstream inF;
       string readId;
       inF.open(args.args()[0].c_str());
 

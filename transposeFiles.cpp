@@ -8,6 +8,8 @@ using namespace std;
 #include "FileHeader.h"
 #include "transposeFiles.h"
 
+#include "bxzstr/include/bxzstr.hpp"
+
 #include "common.h"
 
 bool transposeFiles(vector<string> inFileNames, string outFileName, bool verbose, string message){
@@ -23,7 +25,7 @@ bool transposeFiles(vector<string> inFileNames, string outFileName, bool verbose
    }//}}}
    //{{{ Opening input
    fileN = inFileNames.size();
-   ifstream *inFile = new ifstream[fileN];
+   bxz::ifstream *inFile = new bxz::ifstream[fileN];
    totalN=0;
    FileHeader fh;
    for(i=0;i<fileN;i++){

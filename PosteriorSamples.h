@@ -5,6 +5,8 @@
 #include<fstream>
 #include<string>
 
+#include "bxzstr/include/bxzstr.hpp"
+
 using namespace std;
 
 const long PS_maxStoredSamples = 100000000;
@@ -14,7 +16,7 @@ class PosteriorSamples{//{{{
       long N,M;
       double norm;
       bool transposed,failed,areLogged;
-      ifstream samplesF;
+      bxz::ifstream samplesF;
       vector<long> lines;
       vector<vector<double> > samples;
 

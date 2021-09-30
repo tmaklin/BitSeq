@@ -6,6 +6,8 @@
 
 #include "FileHeader.h"
 
+#include "bxzstr/include/bxzstr.hpp"
+
 #include "common.h"
 
 namespace ns_math {
@@ -212,7 +214,7 @@ bool checkGeneCount(long G, long M){//{{{
 namespace ns_params {
 bool readParams(const string &name, vector<paramT> *params, ofstream *outF){//{{{
    long parN;
-   ifstream parFile(name.c_str());
+   bxz::ifstream parFile(name.c_str());
    FileHeader fh(&parFile);
    if(!fh.paramsHeader(&parN, outF)){
       error("Main: Problem loading parameters file %s\n",name.c_str());

@@ -10,6 +10,8 @@ using namespace std;
 #include "misc.h"
 #include "TranscriptInfo.h"
 
+#include "bxzstr/include/bxzstr.hpp"
+
 namespace ns_convertS {
 double r2c(double sample, double norm, double len){
    return sample * norm * len;
@@ -88,7 +90,7 @@ int main(int argc,char* argv[]){
    }
    //}}}
    bool trans;
-   ifstream inFile;
+   bxz::ifstream inFile;
    FileHeader fh;
    string geName,trName;
    TranscriptInfo trInfo;

@@ -4,6 +4,8 @@
 #include "FileHeader.h"
 #include "common.h"
 
+#include "bxzstr/include/bxzstr.hpp"
+
 TE_FileType TranscriptExpression::guessFileType(const string &fileName){//{{{
    string extension = fileName.substr(fileName.rfind(".")+1);
    if(extension == "thetaMeans") return SAMPLER_MEANS;
@@ -26,7 +28,7 @@ TranscriptExpression::TranscriptExpression(const string &fileName, TE_FileType f
 bool TranscriptExpression::readExpression(const string &fileName, TE_FileType fileType){//{{{
    long i;
    if(fileType == GUESS)fileType = guessFileType(fileName);
-   ifstream varFile(fileName.c_str());
+   bxz::ifstream varFile(fileName.c_str());
    FileHeader fh(&varFile);
    if((!fh.varianceHeader(&M,&logged))||(M==0)){
       error("TranscriptExpression: Problem loading variance file %s\n",(fileName).c_str());

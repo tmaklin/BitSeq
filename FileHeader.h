@@ -5,6 +5,8 @@
 #include<map>
 #include<vector>
 
+#include "bxzstr/include/bxzstr.hpp"
+
 using namespace std;
 
 const long no_value = -4747;
@@ -19,16 +21,16 @@ enum AlignmentFileType { OLD_FORMAT, NEW_FORMAT, LOG_FORMAT };
 // The individual functions then just look whether FLAG was present, and in case of integers, whether it had some value assigned to it.
 class FileHeader {
  private:
-   ifstream *file;
+   bxz::ifstream *file;
    map<string,long> values;
    bool readValues(ofstream *outF = NULL);
 
    void skipEmptyLines();
  public:
-   FileHeader(ifstream *f = NULL) {
+   FileHeader(bxz::ifstream *f = NULL) {
       file = f;
    }
-   void setFile(ifstream *f){
+   void setFile(bxz::ifstream *f){
       file = f;
    }
    void close(){

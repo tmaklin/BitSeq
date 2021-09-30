@@ -1,6 +1,6 @@
 Dependencies:
 ---------------------------------------
-GNU make, g++ , zlib (for samtools API used in parseAlignment program)
+GNU make, g++ , zlib
 Optional:
 python - for helper scripts getCount.py, extractTranscriptInfo.py
 
@@ -33,4 +33,5 @@ Artistic-2.0
  + Boost_1_0 for directory boost 
  + MIT for directory samtools
  + LGPL for directory asa103
+ + MPL 2.0 for directory bxzstr
 
